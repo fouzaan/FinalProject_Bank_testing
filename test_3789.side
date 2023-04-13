@@ -1,0 +1,29 @@
+{
+  "id": "83ad9731-dc73-4b54-b2f0-09e84117f394",
+  "version": "2.0",
+  "name": "test_3789",
+  "url": "",
+  "tests": [{
+    "id": "73dc84d5-5f8d-4c1b-aed9-dab4b043a9a0",
+    "name": "delete_customer",
+    "commands": []
+  }, {
+    "id": "d02688d3-20fd-4702-b512-607e51087c44",
+    "name": "banance_enquiry",
+    "commands": []
+  }, {
+    "id": "cd1bab93-fbfb-49aa-851d-d7fe3db3714f",
+    "name": "customized_statement",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "8d29a72d-694d-40d0-8b8c-1be040f691f1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["73dc84d5-5f8d-4c1b-aed9-dab4b043a9a0"]
+  }],
+  "urls": [],
+  "plugins": []
+}
