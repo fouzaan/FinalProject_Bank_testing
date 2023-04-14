@@ -2,7 +2,7 @@
   "id": "83ad9731-dc73-4b54-b2f0-09e84117f394",
   "version": "2.0",
   "name": "test_3789",
-  "url": "https://demo.guru99.com/V4/",
+  "url": "https://demo.guru99.com/V4/manager/CustomisedStatementInput.php",
   "tests": [{
     "id": "73dc84d5-5f8d-4c1b-aed9-dab4b043a9a0",
     "name": "delete_customer",
@@ -1270,6 +1270,6 @@
     "timeout": 300,
     "tests": ["73dc84d5-5f8d-4c1b-aed9-dab4b043a9a0"]
   }],
-  "urls": ["https://demo.guru99.com/V4/"],
+  "urls": ["https://demo.guru99.com/V4/", "https://demo.guru99.com/V4/manager/CustomisedStatementInput.php"],
   "plugins": []
 }
