@@ -15,7 +15,7 @@ class TestMinistatement():
     self.driver = webdriver.Chrome()
     self.vars = {}
   
-  def teardown(self, method):
+  def teardown_method(self, method):
     self.driver.quit()
   
   def test_login_and_test_empty(self):
@@ -68,7 +68,8 @@ class TestMinistatement():
     self.driver.find_element(By.NAME, "accountno").click()
     self.driver.find_element(By.NAME, "accountno").send_keys(Keys.SPACE)
     self.driver.find_element(By.NAME, "accountno").send_keys(Keys.TAB)
-    assert self.driver.find_element(By.ID, "message2").text == "Characters are not allowed"
+    assert self.driver.find_element(By.ID, "message2").text == "First character cannot have space"
+    #assert self.driver.find_element(By.ID, "message2").text == "Characters are not allowed"
 
   # TODO: test_valid_account_no
 

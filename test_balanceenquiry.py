@@ -18,7 +18,7 @@ class TestBalanceenquiry():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_balanceenquiry(self):
+  def test_login_and_blank_error(self):
     self.driver.get("https://demo.guru99.com/V4/")
     self.driver.find_element(By.NAME, "uid").send_keys("mngr492649")
     self.driver.find_element(By.NAME, "password").send_keys("anyguqE")
@@ -53,12 +53,13 @@ class TestBalanceenquiry():
     self.driver.find_element(By.NAME, "accountno").send_keys(Keys.TAB)
     assert self.driver.find_element(By.ID, "message2").text == "Special characters are not allowed"
 
-  def test_special_error(self):
+  def test_space_error(self):
     self.driver.get("https://demo.guru99.com/V4/manager/BalEnqInput.php")
     self.driver.find_element(By.NAME, "accountno").click()
     self.driver.find_element(By.NAME, "accountno").send_keys(Keys.SPACE)
     self.driver.find_element(By.NAME, "accountno").send_keys(Keys.TAB)
-    assert self.driver.find_element(By.ID, "message2").text == "Characters are not allowed"
+    assert self.driver.find_element(By.ID, "message2").text == "First character cannot have space"
+    #assert self.driver.find_element(By.ID, "message2").text == "Characters are not allowed"
 
   # TODO: test_valid_account_no
 
@@ -74,6 +75,6 @@ class TestBalanceenquiry():
     self.driver.find_element(By.NAME, "accountno").send_keys("1234Acc123")
     self.driver.find_element(By.NAME, "res").click()
     assert self.driver.find_element(By.NAME, "accountno").text == ""
-
+  
 if __name__ == "__main__":
   pytest.main()
