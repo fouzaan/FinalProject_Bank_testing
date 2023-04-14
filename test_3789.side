@@ -563,6 +563,195 @@
     "id": "cd1bab93-fbfb-49aa-851d-d7fe3db3714f",
     "name": "customized_statement",
     "commands": []
+  }, {
+    "id": "cb5cb961-e50b-46e6-9d9d-31e102253fdb",
+    "name": "balance_enquiry",
+    "commands": [{
+      "id": "bc6ae5d0-449d-4cb6-aef4-9a75ef521767",
+      "comment": "",
+      "command": "open",
+      "target": "https://demo.guru99.com/V4/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f7a7e8d-86c7-42e0-ae74-646da0e01300",
+      "comment": "",
+      "command": "type",
+      "target": "name=uid",
+      "targets": [
+        ["name=uid", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='uid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "mngr492649"
+    }, {
+      "id": "05f67c1e-834b-4b65-a888-56c8143bdf5c",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "anyguqE"
+    }, {
+      "id": "bd2160cc-5eab-4a8c-ac29-663c984ce5ba",
+      "comment": "",
+      "command": "click",
+      "target": "name=btnLogin",
+      "targets": [
+        ["name=btnLogin", "name"],
+        ["css=tr:nth-child(3) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='btnLogin']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5167f5f7-fa79-42de-b1aa-c04dc55a38b0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Balance Enquiry",
+      "targets": [
+        ["linkText=Balance Enquiry", "linkText"],
+        ["css=.menusubnav > li:nth-child(12) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Balance Enquiry')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'BalEnqInput.php')]", "xpath:href"],
+        ["xpath=//div/ul/li[12]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Balance Enquiry')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c86b3ff6-e687-423c-b022-ade492f0c309",
+      "comment": "",
+      "command": "click",
+      "target": "name=accountno",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea3e0078-b6d5-4b65-8a3d-f54af0b30b34",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=accountno",
+      "targets": [
+        ["name=cusid", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='cusid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_TAB}"
+    }, {
+      "id": "b8e87bb7-8561-45c6-bad2-9d2d46b8de16",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=message2",
+      "targets": [],
+      "value": "Account Number must not be blank"
+    }, {
+      "id": "2d4ff320-82af-4a60-8505-66e4d621a3e9",
+      "comment": "",
+      "command": "type",
+      "target": "name=accountno",
+      "targets": [],
+      "value": "1234Acc123"
+    }, {
+      "id": "3291e865-7ab7-44b9-88b0-b61fe47805ad",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=accountno",
+      "targets": [
+        ["name=cusid", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='cusid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_TAB}"
+    }, {
+      "id": "b4fc7bfb-f43a-4081-9f63-3596f8550953",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=message2",
+      "targets": [],
+      "value": "Characters are not allowed"
+    }, {
+      "id": "9356127c-5bee-452b-9c3e-4dccac3d1498",
+      "comment": "",
+      "command": "type",
+      "target": "name=accountno",
+      "targets": [],
+      "value": "123!@#\\n!@#"
+    }, {
+      "id": "7cb4275a-54f8-4e68-980b-fdc09a975521",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=accountno",
+      "targets": [
+        ["name=cusid", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='cusid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_TAB}"
+    }, {
+      "id": "6af16554-7de6-491c-b5f1-713663cc0979",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=message2",
+      "targets": [],
+      "value": "Special characters are not allowed"
+    }, {
+      "id": "e47c4458-9432-4ae8-90f1-f65412ace618",
+      "comment": "",
+      "command": "click",
+      "target": "name=res",
+      "targets": [
+        ["name=res", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='res']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e83ecc1b-7fd2-4fe3-8e5a-45d6957c9cf5",
+      "comment": "",
+      "command": "click",
+      "target": "name=accountno",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84559938-732a-41f7-b5c5-5390e09ed1fc",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=accountno",
+      "targets": [
+        ["name=cusid", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='cusid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_SPACE}"
+    }, {
+      "id": "b90d766e-258c-421c-93bf-3483ee6af0af",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=accountno",
+      "targets": [
+        ["name=cusid", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='cusid']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_TAB}"
+    }, {
+      "id": "a482f33d-057d-49b5-be88-2a65d04ad883",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=message2",
+      "targets": [],
+      "value": "Characters are not allowed"
+    }]
   }],
   "suites": [{
     "id": "8d29a72d-694d-40d0-8b8c-1be040f691f1",
