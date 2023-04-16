@@ -128,7 +128,16 @@ class TestCustomizedstatement():
     assert self.driver.find_element(By.NAME, "amountlowerlimit").text == ""
     assert self.driver.find_element(By.NAME, "numtransaction").text == ""
 
-  # TODO: test_valid_details
+  def test_valid_details(self):
+    self.driver.get("https://demo.guru99.com/V4/manager/CustomisedStatementInput.php")
+    self.driver.find_element(By.NAME, "accountno").send_keys("121482")
+    self.driver.find_element(By.NAME, "fdate").send_keys("2023-04-05")
+    self.driver.find_element(By.NAME, "amountlowerlimit").send_keys("0")
+    self.driver.find_element(By.NAME, "numtransaction").send_keys("1")
+    self.driver.find_element(By.XPATH, "/html/body/table/tbody/tr/td/table/tbody/tr[13]/td[2]/input[1]").click()
+    self.driver.find_element(By.XPATH, "/html/body/table/tbody/tr/td/table/tbody/tr[13]/td[2]/input[1]").click()
+    assert self.driver.switch_to.alert.text == "Please fill all fields"
+
   
 if __name__ == "__main__":
   pytest.main()

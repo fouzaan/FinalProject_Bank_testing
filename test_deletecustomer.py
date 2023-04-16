@@ -49,7 +49,7 @@ class TestDeletecustomer():
     self.driver.find_element(By.NAME, "cusid").send_keys(Keys.TAB)
     assert self.driver.find_element(By.ID, "message14").text == "Characters are not allowed"
   
-  def test_space_error(self):
+  def test_only_space_error(self):
     self.driver.get("https://demo.guru99.com/V4/manager/DeleteCustomerInput.php")
     self.driver.find_element(By.NAME, "cusid").click()
     self.driver.find_element(By.NAME, "cusid").send_keys(Keys.SPACE)
@@ -65,7 +65,15 @@ class TestDeletecustomer():
     self.driver.switch_to.alert.accept()
     assert self.driver.switch_to.alert.text == "Customer does not exist!!"
 
-  # TODO: test correct ID
+  def test_correct_id(self):
+    self.driver.get("https://demo.guru99.com/V4/manager/DeleteCustomerInput.php")
+    self.driver.find_element(By.NAME, "cusid").send_keys("35203")
+    self.driver.find_element(By.NAME, "cusid").send_keys(Keys.TAB)
+    self.driver.find_element(By.NAME, "cusid").send_keys(Keys.ENTER)
+    assert self.driver.switch_to.alert.text == "Do you really want to delete this Customer?"
+    self.driver.switch_to.alert.accept()
+    assert self.driver.switch_to.alert.text == "Customer does not exist could not be deleted!! First delete all accounts of this customer then delete the customer"
+
 
   def test_reset(self):
     self.driver.get("https://demo.guru99.com/V4/manager/DeleteCustomerInput.php")

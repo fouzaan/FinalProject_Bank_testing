@@ -71,7 +71,11 @@ class TestMinistatement():
     assert self.driver.find_element(By.ID, "message2").text == "First character cannot have space"
     #assert self.driver.find_element(By.ID, "message2").text == "Characters are not allowed"
 
-  # TODO: test_valid_account_no
+  def test_valid_account_no(self):
+    self.driver.get("https://demo.guru99.com/V4/manager/MiniStatementInput.php")
+    self.driver.find_element(By.NAME, "accountno").send_keys("121482")
+    self.driver.find_element(By.NAME, "accountno").send_keys(Keys.ENTER)
+    assert self.driver.find_element(By.CSS_SELECTOR, "table").is_displayed()
 
   def test_invalid_account_no(self):
     self.driver.get("https://demo.guru99.com/V4/manager/MiniStatementInput.php")
