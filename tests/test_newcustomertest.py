@@ -368,3 +368,6 @@ class TestVerifynamefield():
         self.driver.find_element(By.NAME, "password").send_keys(Keys.TAB)
         assert self.driver.find_element(
             By.ID, "message18").text == "Password must not be blank"
+        
+if __name__ == "__main__":
+    pytest.main()

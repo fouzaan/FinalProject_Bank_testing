@@ -354,3 +354,6 @@ class TestEditCustomertest(unittest.TestCase):
 
         # Assert that the alert is present
         self.assertTrue(alert_visible)
+
+if __name__ == "__main__":
+    pytest.main()
